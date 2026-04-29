@@ -160,7 +160,7 @@ section:nth-of-type(6) .card:hover{
 <body>
 <header>
 <h1>Deepak Verma</h1>
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<div class="menu-toggle" id="menuIcon" onclick="toggleMenu()">☰</div>
 <nav id="navMenu">
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
@@ -364,7 +364,17 @@ type();
 
 // Mobile Menu Toggle
 function toggleMenu(){
-  document.getElementById('navMenu').classList.toggle('active');
+  const nav = document.getElementById('navMenu');
+  const icon = document.getElementById('menuIcon');
+
+  nav.classList.toggle('active');
+
+  // Toggle icon ☰ ↔ ✖
+  if(nav.classList.contains('active')){
+    icon.innerHTML = '✖';
+  } else {
+    icon.innerHTML = '☰';
+  }
 }
 </script>
 </body>
