@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deepak Verma | SEO Executive</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/countup.js@2.0.7/dist/countUp.umd.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#0b0b0b;color:#fff}
+:root{--gold:#d4af37;--gold-light:#f5d76e;--card:#1a1a1a}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 10%;position:sticky;top:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--gold)}
+header h1{color:var(--gold)}
+nav a{margin:0 15px;color:#fff;text-decoration:none}
+nav a:hover{color:var(--gold)}
+.hero{display:flex;align-items:center;justify-content:space-between;padding:90px 10%;gap:60px}
+.hero-text{flex:1;max-width:55%}
+.hero img{flex:1;max-width:40%}
+
+/* Responsive */
+@media(max-width:900px){
+.hero{flex-direction:column;text-align:center}
+.hero-text{max-width:100%}
+.hero img{max-width:80%;margin-top:20px}
+}
+.hero img{width:320px;border-radius:20px;border:2px solid var(--gold)}
+.hero-text h2{font-size:48px}
+.hero-text p{margin-top:15px;line-height:1.8;letter-spacing:0.5px}
+.hero-text span{color:var(--gold)}
+.btn{display:inline-block;margin-top:20px;padding:12px 25px;background:var(--gold);color:#000;border-radius:8px;text-decoration:none;transition:all 0.3s ease;border:1px solid transparent}
+
+/* Hero Button Hover */
+.btn:hover{
+  background:transparent;
+  color:var(--gold);
+  border:1px solid var(--gold);
+  transform:translateY(-4px) scale(1.05);
+  box-shadow:0 0 15px rgba(212,175,55,0.6),0 0 30px rgba(212,175,55,0.3);
+}
+section{padding:80px 10%}
+.section-title{font-size:32px;margin-bottom:25px;color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:var(--card);padding:25px;border-radius:15px;border:1px solid rgba(212,175,55,0.2);transition:all 0.3s ease}
+
+/* About Section Hover */
+#about .card:hover{
+  transform:translateY(-8px) scale(1.03);
+  box-shadow:0 0 20px rgba(212,175,55,0.4),0 0 40px rgba(212,175,55,0.2);
+  border:1px solid var(--gold);
+}
+
+#about .card h3{
+  color:var(--gold);
+  margin-bottom:10px;
+}
+
+/* About Column Layout */
+#about .grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
+}
+
+@media(max-width:900px){
+  #about .grid{
+    grid-template-columns:1fr;
+  }
+}
+.skills span{display:inline-block;background:#222;margin:6px;padding:10px 15px;border-radius:6px;transition:all 0.3s ease;cursor:pointer}
+.skills span:hover{
+  background:var(--gold);
+  color:#000;
+  transform:translateY(-5px) scale(1.05);
+  box-shadow:0 0 15px rgba(212,175,55,0.6), 0 0 30px rgba(212,175,55,0.3);
+}
+.skills span:hover{background:var(--gold);color:#000}
+.timeline{border-left:2px solid var(--gold);padding-left:30px;margin-top:30px;display:flex;flex-direction:column;gap:30px}
+.timeline .card{padding:30px 35px;line-height:1.8;border-radius:18px}
+.timeline h3{margin-bottom:15px;color:var(--gold)}
+.timeline p{margin-top:10px}
+
+/* Bullet spacing */
+.timeline p br{display:block;margin-bottom:10px;content:"";}
+
+/* Experience List Styling */
+.exp-list{margin-top:10px;padding-left:20px}
+.exp-list li{margin-bottom:10px;line-height:1.7}
+.exp-list li::marker{color:var(--gold)}
+
+/* Hover Glow Effect */
+.timeline .card:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 0 20px rgba(212,175,55,0.4), 0 0 40px rgba(212,175,55,0.2);
+  border:1px solid var(--gold);
+  transition:all 0.3s ease;
+}
+
+.stats{display:flex;flex-wrap:wrap;text-align:center}
+.stat{flex:1;padding:20px}
+.stat h2{font-size:45px;color:var(--gold)}
+footer{text-align:center;padding:20px;background:#000;border-top:1px solid var(--gold)}
+
+/* Education Hover Effect */
+section:nth-of-type(6) .card{
+  transition:all 0.3s ease;
+}
+section:nth-of-type(6) .card:hover{
+  transform:translateY(-8px) scale(1.03);
+  box-shadow:0 0 20px rgba(212,175,55,0.4),0 0 40px rgba(212,175,55,0.2);
+  border:1px solid var(--gold);
+}
+
+/* Projects Click + Hover */
+.project-card{
+  text-decoration:none;
+  color:#fff;
+  display:block;
+  transition:all 0.3s ease;
+}
+.project-card:hover{
+  transform:translateY(-10px) scale(1.04);
+  box-shadow:0 0 25px rgba(212,175,55,0.5),0 0 50px rgba(212,175,55,0.2);
+  border:1px solid var(--gold);
+}
+.project-card h3{color:var(--gold);margin-bottom:10px}
+.project-card p{opacity:0.8}
+
+/* Contact Hover Effects */
+#contact .card{
+  transition:all 0.3s ease;
+}
+#contact .card:hover{
+  transform:translateY(-8px) scale(1.03);
+  box-shadow:0 0 20px rgba(212,175,55,0.4),0 0 40px rgba(212,175,55,0.2);
+  border:1px solid var(--gold);
+}
+
+#contact .btn{
+  transition:all 0.3s ease;
+}
+#contact .btn:hover{
+  background:transparent;
+  color:var(--gold);
+  border:1px solid var(--gold);
+  box-shadow:0 0 15px rgba(212,175,55,0.5);
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Deepak Verma</h1>
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#experience">Experience</a>
+<a href="#projects">Profiles</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-text">
+<h2>Hi, I'm <span>Deepak Verma</span></h2>
+<h3 id="typing" style="margin-top:10px;color:var(--gold-light);font-weight:500"></h3>
+<p>Results-driven SEO Executive with 3+ years of experience specializing in on-page SEO, technical SEO, and data-driven analytics. Proven ability to increase organic traffic, improve keyword rankings, and optimize website performance through strategic planning and execution. Skilled in tools like Google Analytics, Search Console, Ahrefs, and SEMrush to deliver measurable growth.</p>
+
+<div style="margin-top:25px">
+<a href="#contact" class="btn">Hire Me</a>
+
+</div>
+
+
+</div>
+<img src="Image/Deepak.jpg" alt="Deepak Verma">
+</section>
+
+<section id="about">
+<h2 class="section-title">About Me</h2>
+<div class="grid">
+
+<div class="card">
+<h3>📍 Location</h3>
+<p>Bokaro Steel City, India - 827013</p>
+<p style="margin-top:10px;opacity:0.85">Available for remote work and freelance SEO projects across India.</p>
+</div>
+
+<div class="card">
+<h3>⏳ Experience</h3>
+<p><strong style="font-size:22px;color:var(--gold)">3+ Years</strong></p>
+<p style="margin-top:10px;opacity:0.85">Hands-on experience in Technical SEO, Content Optimization, Link Building, and Performance Marketing. Worked with agencies and clients to scale organic growth.</p>
+</div>
+
+</div>
+</section>
+
+<section id="skills">
+<h2 class="section-title">Skills</h2>
+<div class="skills">
+<span>On-Page SEO</span>
+<span>Off-Page SEO</span>
+<span>Technical SEO</span>
+<span>Local SEO</span>
+<span>Keyword Research</span>
+<span>Link Building</span>
+<span>Google Analytics</span>
+<span>Search Console</span>
+<span>Ahrefs</span>
+<span>SEMrush</span>
+<span>WordPress</span>
+<span>Content Strategy</span>
+<span>Problem Solving</span>
+<span>Team Collaboration</span>
+<span>Google My Business Specialist</span>
+<span>Google Ads</span>
+<span>Meta Ads</span>
+</div>
+</section>
+
+<section id="experience">
+<h2 class="section-title">Work Experience</h2>
+<div class="timeline">
+
+<div class="card">
+<h3>SEO Executive – All Digital Ideas (Dec 2025 – April 2026)</h3>
+<ul class="exp-list">
+<li>Improved overall website traffic by 25% through strategic keyword targeting and content optimization.</li>
+<li>Achieved a 15% increase in keyword rankings across high-competition search terms.</li>
+<li>Boosted user engagement by 20% by improving on-page SEO and content readability.</li>
+<li>Conducted technical SEO audits fixing page speed, crawl errors, and mobile usability issues.</li>
+<li>Optimized internal linking, metadata, and website structure for better visibility.</li>
+<li>Collaborated with content & design teams for SEO-friendly UI/UX.</li>
+<li>Monitored performance via Google Analytics & Search Console with actionable insights.</li>
+<li>Implemented schema markup for rich snippets and improved SERP appearance.</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>SEO Executive – Pixel Global IT Services (Apr 2023 – Nov 2025)</h3>
+<ul class="exp-list">
+<li>Conducted keyword research & competitor analysis for SEO strategies.</li>
+<li>Executed on-page SEO (meta tags, headers, URLs).</li>
+<li>Performed technical SEO audits (indexing, crawlability, performance).</li>
+<li>Improved site speed & mobile responsiveness for better UX.</li>
+<li>Built high-quality backlinks using white-hat techniques.</li>
+<li>Collaborated with content teams for blog & landing page optimization.</li>
+<li>Tracked performance using Ahrefs, SEMrush & Google Analytics.</li>
+<li>Created monthly SEO reports with insights and recommendations.</li>
+<li>Worked on local SEO (Google Business Profile & citations).</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Data Entry Freelancer (Mar 2022 – Jan 2023)</h3>
+<ul class="exp-list">
+<li>Managed high-volume data entry tasks with strong accuracy.</li>
+<li>Worked with ERP systems for data processing and reporting.</li>
+<li>Identified and corrected data errors to improve quality.</li>
+<li>Maintained structured databases and updated records timely.</li>
+<li>Supported data tracking, documentation, and operations.</li>
+<li>Ensured data confidentiality and compliance protocols.</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<section id="projects">
+<h2 class="section-title">Websites & Profiles</h2>
+<div class="grid">
+
+<a href="https://www.marketadigitalit.com" target="_blank" class="card project-card">
+  <h3>Portfolio</h3>
+  <p>www.marketadigitalit.com</p>
+</a>
+
+<a href="https://www.linkedin.com/in/deepak-verma-bab1a2305" target="_blank" class="card project-card">
+  <h3>LinkedIn</h3>
+  <p>linkedin.com/in/deepak-verma-bab1a2305</p>
+</a>
+
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Education</h2>
+<div class="card">
+<p>Bachelor of Commerce (B.Com) - BBMKU, Dhanbad (2023)</p>
+</div>
+</section>
+
+<section id="stats">
+<h2 class="section-title">Achievements</h2>
+<div class="stats">
+<div class="stat"><h2 id="counter1">0</h2><p>Traffic Growth %</p></div>
+<div class="stat"><h2 id="counter2">0</h2><p>Ranking Boost %</p></div>
+<div class="stat"><h2 id="counter3">0</h2><p>Conversion Increase %</p></div>
+</div>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Contact</h2>
+<div class="grid">
+<div class="card"><h3>Email</h3><p><a href="mailto:deepakkumar3753816@gmail.com" style="color:var(--gold);text-decoration:none">deepakkumar3753816@gmail.com</a></p></div>
+<div class="card"><h3>Phone</h3><p><a href="tel:+917870241157" style="color:var(--gold);text-decoration:none">7870241157</a></p></div>
+
+</div>
+<a href="https://wa.me/917870241157" class="btn">Chat on WhatsApp</a>
+</section>
+
+<footer>
+<p>© 2026 Deepak Verma | SEO Portfolio</p>
+</footer>
+
+<script>
+// Counter values (you can change anytime)
+const counter1 = new countUp.CountUp('counter1', 40);
+const counter2 = new countUp.CountUp('counter2', 30);
+const counter3 = new countUp.CountUp('counter3', 50);
+
+// Run counters when section is visible
+const statsSection = document.querySelector('#stats');
+let started = false;
+
+window.addEventListener('scroll', () => {
+  const sectionTop = statsSection.getBoundingClientRect().top;
+  const screenHeight = window.innerHeight;
+
+  if(sectionTop < screenHeight && !started){
+    counter1.start();
+    counter2.start();
+    counter3.start();
+    started = true;
+  }
+});
+
+// Typing Effect
+const text = ["SEO Expert","Technical SEO Specialist","Growth Strategist"];
+let i=0,j=0,current="",isDeleting=false;
+function type(){
+current = text[i];
+document.getElementById("typing").innerHTML = current.substring(0,j);
+
+if(!isDeleting && j<current.length){j++;}
+else if(isDeleting && j>0){j--;}
+else{
+isDeleting = !isDeleting;
+if(!isDeleting){i=(i+1)%text.length}
+}
+setTimeout(type,isDeleting?50:100);
+}
+type();
+</script>
+</body>
+</html>
