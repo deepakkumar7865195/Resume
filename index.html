@@ -10,10 +10,20 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 body{background:#0b0b0b;color:#fff}
 :root{--gold:#d4af37;--gold-light:#f5d76e;--card:#1a1a1a}
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 10%;position:sticky;top:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--gold)}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 10%;position:sticky;top:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--gold);z-index:1000}
 header h1{color:var(--gold)}
+nav{display:flex;align-items:center}
 nav a{margin:0 15px;color:#fff;text-decoration:none}
 nav a:hover{color:var(--gold)}
+
+/* Mobile Menu */
+.menu-toggle{display:none;font-size:26px;color:#fff;cursor:pointer}
+@media(max-width:900px){
+  nav{position:absolute;top:70px;right:0;background:#111;width:100%;flex-direction:column;align-items:center;max-height:0;overflow:hidden;transition:0.3s}
+  nav.active{max-height:300px;padding:20px 0}
+  nav a{margin:10px 0}
+  .menu-toggle{display:block}
+}
 .hero{display:flex;align-items:center;justify-content:space-between;padding:90px 10%;gap:60px}
 .hero-text{flex:1;max-width:55%}
 .hero img{flex:1;max-width:40%}
@@ -150,7 +160,8 @@ section:nth-of-type(6) .card:hover{
 <body>
 <header>
 <h1>Deepak Verma</h1>
-<nav>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<nav id="navMenu">
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
 <a href="#experience">Experience</a>
@@ -350,6 +361,11 @@ if(!isDeleting){i=(i+1)%text.length}
 setTimeout(type,isDeleting?50:100);
 }
 type();
+
+// Mobile Menu Toggle
+function toggleMenu(){
+  document.getElementById('navMenu').classList.toggle('active');
+}
 </script>
 </body>
 </html>
